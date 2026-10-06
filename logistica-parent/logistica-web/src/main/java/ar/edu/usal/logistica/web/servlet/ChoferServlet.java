@@ -6,6 +6,7 @@ import ar.edu.usal.logistica.dao.factory.DAOFactory;
 import ar.edu.usal.logistica.domain.Camion;
 import ar.edu.usal.logistica.domain.Categoria;
 import ar.edu.usal.logistica.domain.Chofer;
+import ar.edu.usal.logistica.domain.Usuario;
 import ar.edu.usal.logistica.exception.DAOException;
 import ar.edu.usal.logistica.exception.ValidacionException;
 
@@ -30,6 +31,23 @@ public class ChoferServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
+        HttpSession sesion = req.getSession();
+        Usuario usuario = (Usuario) sesion.getAttribute("usuario");
+        if (usuario == null) {
+            resp.sendRedirect(req.getContextPath() + "/login");
+            return;
+        }
+        if (!usuario.esAdmin()) {
+            resp.sendError(HttpServletResponse.SC_FORBIDDEN, "Solo para administradores");
+            return;
+        }
+
+        // Si el POST anterior dejo un aviso en la Session, se pasa al request y se borra (se muestra una sola vez)
+        req.setAttribute("aviso", sesion.getAttribute("aviso"));
+        req.setAttribute("avisoTipo", sesion.getAttribute("avisoTipo"));
+        sesion.removeAttribute("aviso");
+        sesion.removeAttribute("avisoTipo");
+
         try {
             DAOFactory fabrica = DAOFactory.getInstance();
             ChoferDAO choferDAO = fabrica.getChoferDAO();
@@ -64,6 +82,15 @@ public class ChoferServlet extends HttpServlet {
             throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
         HttpSession sesion = req.getSession();
+        Usuario usuario = (Usuario) sesion.getAttribute("usuario");
+        if (usuario == null) {
+            resp.sendRedirect(req.getContextPath() + "/login");
+            return;
+        }
+        if (!usuario.esAdmin()) {
+            resp.sendError(HttpServletResponse.SC_FORBIDDEN, "Solo para administradores");
+            return;
+        }
 
         try {
             DAOFactory fabrica = DAOFactory.getInstance();

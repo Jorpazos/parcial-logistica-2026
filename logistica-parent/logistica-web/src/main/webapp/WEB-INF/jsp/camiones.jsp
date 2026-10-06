@@ -137,15 +137,13 @@
 </script>
 
 <%-- Mensaje que dejo el servlet en la Session: se muestra una vez y se borra --%>
-<c:if test="${not empty sessionScope.aviso}">
+<c:if test="${not empty aviso}">
     <script>
         Swal.fire({
-            icon: '<c:out value="${sessionScope.avisoTipo}"/>',
-            text: '<c:out value="${sessionScope.aviso}"/>'
+            icon: '<c:out value="${avisoTipo}"/>',
+            text: '<c:out value="${aviso}"/>'
         });
     </script>
-    <c:remove var="aviso" scope="session"/>
-    <c:remove var="avisoTipo" scope="session"/>
 </c:if>
 </body>
 </html>

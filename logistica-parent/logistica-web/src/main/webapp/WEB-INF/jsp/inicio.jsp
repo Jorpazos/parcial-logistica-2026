@@ -19,8 +19,8 @@
 <jsp:include page="/WEB-INF/jsp/menu.jsp"/>
 
 <div class="container mt-4">
-    <h2>Bienvenido, <c:out value="${sessionScope.usuario.username}"/></h2>
-    <p>Rol: <c:out value="${sessionScope.usuario.rol}"/></p>
+    <h2>Bienvenido, <c:out value="${usuario.username}"/></h2>
+    <p>Rol: <c:out value="${usuario.rol}"/></p>
 </div>
 </body>
 </html>

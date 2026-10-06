@@ -14,7 +14,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="${pageContext.request.contextPath}/inicio">Inicio</a>
             </li>
-            <c:if test="${sessionScope.usuario.rol == 'ADMIN'}">
+            <c:if test="${usuario.rol == 'ADMIN'}">
                 <li class="nav-item">
                     <a class="nav-link" href="${pageContext.request.contextPath}/admin/camiones">Camiones</a>
                 </li>
@@ -25,7 +25,7 @@
                     <a class="nav-link" href="${pageContext.request.contextPath}/admin/viajes">Viajes</a>
                 </li>
             </c:if>
-            <c:if test="${sessionScope.usuario.rol == 'CHOFER'}">
+            <c:if test="${usuario.rol == 'CHOFER'}">
                 <li class="nav-item">
                     <a class="nav-link" href="${pageContext.request.contextPath}/chofer/viajes">Mis viajes</a>
                 </li>

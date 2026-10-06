@@ -86,7 +86,7 @@ public class UsuarioDAOJdbc implements UsuarioDAO {
     /** Convierte la fila en un Usuario. chofer_id puede ser NULL (el ADMIN no tiene chofer). */
     private Usuario mapear(ResultSet rs) throws SQLException {
         long choferId = rs.getLong("chofer_id");
-        Long choferIdONulo = rs.wasNull() ? null : choferId;   // wasNull: ¿la última columna leída era NULL?
+        Long choferIdONulo = (choferId == 0) ? null : choferId;   // si es NULL en la base, getLong devuelve 0
         return new Usuario(rs.getLong("id"), rs.getString("username"), rs.getString("clave"),
                 Rol.valueOf(rs.getString("rol")), choferIdONulo);
     }

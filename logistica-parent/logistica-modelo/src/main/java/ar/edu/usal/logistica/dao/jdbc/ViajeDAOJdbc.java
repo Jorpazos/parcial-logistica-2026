@@ -46,16 +46,7 @@ public class ViajeDAOJdbc implements ViajeDAO {
         try (Connection con = ConnectionManager.getInstance().getConnection()) {
             con.setAutoCommit(false);
             try {
-                // Se bloquea la fila del camión: si dos administradores cargan viajes a la vez, el segundo espera
-                try (PreparedStatement ps = con.prepareStatement("SELECT id FROM camion WHERE id = ? FOR UPDATE")) {
-                    ps.setLong(1, viaje.getCamion().getId());
-                    try (ResultSet rs = ps.executeQuery()) {
-                        if (!rs.next()) {
-                            throw new ValidacionException("El camión seleccionado ya no existe.");
-                        }
-                    }
-                }
-                // Con el camión bloqueado, se verifica que siga libre (sin viaje ASIGNADO ni EN_CURSO)
+                // Se verifica que el camión siga libre (sin viaje ASIGNADO ni EN_CURSO)
                 try (PreparedStatement ps = con.prepareStatement(
                         "SELECT COUNT(*) FROM viaje WHERE camion_id = ? AND estado IN ('ASIGNADO', 'EN_CURSO')")) {
                     ps.setLong(1, viaje.getCamion().getId());
@@ -124,7 +115,7 @@ public class ViajeDAOJdbc implements ViajeDAO {
             try {
                 // Un chofer no puede tener dos viajes en curso a la vez
                 try (PreparedStatement ps = con.prepareStatement(
-                        "SELECT COUNT(*) FROM viaje WHERE chofer_id = ? AND estado = 'EN_CURSO' FOR UPDATE")) {
+                        "SELECT COUNT(*) FROM viaje WHERE chofer_id = ? AND estado = 'EN_CURSO'")) {
                     ps.setLong(1, choferId);
                     try (ResultSet rs = ps.executeQuery()) {
                         rs.next();

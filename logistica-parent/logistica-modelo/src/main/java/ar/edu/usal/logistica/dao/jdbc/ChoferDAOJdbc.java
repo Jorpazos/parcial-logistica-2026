@@ -211,9 +211,8 @@ public class ChoferDAOJdbc implements ChoferDAO {
             for (Camion camion : chofer.getCamionesAutorizados()) {
                 ps.setLong(1, chofer.getId());
                 ps.setLong(2, camion.getId());
-                ps.addBatch();   // acumula las inserciones
+                ps.executeUpdate();
             }
-            ps.executeBatch();   // y las manda todas juntas
         }
     }
 
