@@ -7,6 +7,7 @@ import ar.edu.usal.logistica.exception.ChoferNoEncontradoException;
 import ar.edu.usal.logistica.exception.DAOException;
 import ar.edu.usal.logistica.exception.ValidacionException;
 import ar.edu.usal.logistica.util.ConnectionManager;
+import ar.edu.usal.logistica.util.JdbcUtil;
 import ar.edu.usal.logistica.util.PasswordUtil;
 
 import java.sql.Connection;
