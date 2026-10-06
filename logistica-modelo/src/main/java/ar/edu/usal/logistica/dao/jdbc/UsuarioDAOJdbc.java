@@ -5,6 +5,7 @@ import ar.edu.usal.logistica.domain.Rol;
 import ar.edu.usal.logistica.domain.Usuario;
 import ar.edu.usal.logistica.exception.DAOException;
 import ar.edu.usal.logistica.util.ConnectionManager;
+import ar.edu.usal.logistica.util.JdbcUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
