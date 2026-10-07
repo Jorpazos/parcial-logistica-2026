@@ -8,7 +8,6 @@ import ar.edu.usal.logistica.exception.DAOException;
 import ar.edu.usal.logistica.exception.ValidacionException;
 import ar.edu.usal.logistica.util.ConnectionManager;
 import ar.edu.usal.logistica.util.JdbcUtil;
-import ar.edu.usal.logistica.util.PasswordUtil;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -61,7 +60,7 @@ public class ChoferDAOJdbc implements ChoferDAO {
                 // 3) Su usuario para entrar al sistema (el usuario es su DNI)
                 try (PreparedStatement ps = con.prepareStatement(INSERT_USUARIO)) {
                     ps.setString(1, chofer.getDni());
-                    ps.setString(2, PasswordUtil.hashear(claveInicial));
+                    ps.setString(2, claveInicial);
                     ps.setLong(3, chofer.getId());
                     ps.executeUpdate();
                 }

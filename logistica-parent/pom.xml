@@ -5,22 +5,18 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ar.edu.usal.logistica</groupId>
-    <artifactId>logistica-modelo</artifactId>
+    <artifactId>logistica-parent</artifactId>
     <version>1.0.0</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>logistica-modelo</module>
+        <module>logistica-web</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>com.mysql</groupId>
-            <artifactId>mysql-connector-j</artifactId>
-            <version>8.4.0</version>
-            <scope>runtime</scope>
-        </dependency>
-    </dependencies>
 </project>
