@@ -39,3 +39,6 @@ build/
 .DS_Store
 ### IntelliJ ###
 .idea/
+
+# Project exclude paths
+/out/

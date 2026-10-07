@@ -14,28 +14,24 @@
     <title>Ingresar - Logística</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="bg-light">
-<div class="container" style="max-width: 420px; margin-top: 12vh;">
-    <div class="card shadow-sm">
-        <div class="card-body p-4">
-            <h4 class="mb-4 text-center">Logística</h4>
-            <form method="post" action="${pageContext.request.contextPath}/login">
-                <div class="mb-3">
-                    <label class="form-label" for="username">Usuario</label>
-                    <input class="form-control" id="username" name="username" required autofocus>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label" for="clave">Contraseña</label>
-                    <input class="form-control" id="clave" name="clave" type="password" required>
-                </div>
-                <div class="form-check mb-3">
-                    <input class="form-check-input" type="checkbox" id="recordarme" name="recordarme">
-                    <label class="form-check-label" for="recordarme">Recordarme</label>
-                </div>
-                <button class="btn btn-primary w-100" type="submit">Ingresar</button>
-            </form>
+<body>
+<div class="container mt-5 col-md-4">
+    <h3 class="text-center mb-4">Logística</h3>
+    <form method="post" action="${pageContext.request.contextPath}/login">
+        <div class="mb-3">
+            <label class="form-label" for="username">Usuario</label>
+            <input class="form-control" id="username" name="username" required autofocus>
         </div>
-    </div>
+        <div class="mb-3">
+            <label class="form-label" for="clave">Contraseña</label>
+            <input class="form-control" id="clave" name="clave" type="password" required>
+        </div>
+        <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="recordarme" name="recordarme">
+            <label class="form-check-label" for="recordarme">Recordarme</label>
+        </div>
+        <button class="btn btn-primary w-100" type="submit">Ingresar</button>
+    </form>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

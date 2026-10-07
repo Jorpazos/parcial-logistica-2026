@@ -11,7 +11,6 @@ import ar.edu.usal.logistica.dao.jdbc.DistanciaDAOJdbc;
 import ar.edu.usal.logistica.dao.jdbc.UsuarioDAOJdbc;
 import ar.edu.usal.logistica.dao.jdbc.ViajeDAOJdbc;
 
-/** Fábrica concreta: entrega las implementaciones JDBC de cada DAO. También es un Singleton. */
 public final class JdbcDAOFactory extends DAOFactory {
 
     private static final JdbcDAOFactory INSTANCIA = new JdbcDAOFactory();

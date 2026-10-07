@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 /**
  * Convierte filas de un ResultSet en objetos del dominio. El prefijo permite leer columnas
- * con alias cuando una consulta une varias tablas (ej: "ch_nombre", "c_marca").
+ * con alias cuando una consulta une varias tablas ("ch_nombre", "c_marca")
  */
 final class Mapeadores {
 

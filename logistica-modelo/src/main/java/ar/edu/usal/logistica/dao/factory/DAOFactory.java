@@ -20,7 +20,6 @@ public abstract class DAOFactory {
 
     public abstract DistanciaDAO getDistanciaDAO();
 
-    /** Lee "dao.origen" del db.properties y devuelve la fábrica que corresponde. */
     public static DAOFactory getInstance() throws DAOException {
         String origen = ConnectionManager.getInstance().getProperty("dao.origen");
         if ("JDBC".equalsIgnoreCase(origen)) {
