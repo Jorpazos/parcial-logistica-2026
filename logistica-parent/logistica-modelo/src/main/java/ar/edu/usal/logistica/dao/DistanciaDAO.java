@@ -6,6 +6,6 @@ import ar.edu.usal.logistica.exception.ValidacionException;
 
 public interface DistanciaDAO {
 
-    /** @return kilómetros entre ambas ciudades */
+    /*kilómetros entre ambas ciudades */
     int obtenerKm(Destino origen, Destino destino) throws DAOException, ValidacionException;
 }

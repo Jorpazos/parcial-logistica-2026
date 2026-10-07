@@ -1,9 +1,9 @@
 package ar.edu.usal.logistica.domain;
 
-/** Cálculo de tiempo y tanques de un viaje, según el enunciado. */
+/* Cálculo de tiempo y tanques de un viaje */
 public final class CalculadoraViaje {
 
-    /** Kilómetros que recorre el camión por día (dato del enunciado). */
+    /* Kilómetros que recorre el camión por día  */
     public static final int KM_POR_DIA = 200;
 
     private CalculadoraViaje() {

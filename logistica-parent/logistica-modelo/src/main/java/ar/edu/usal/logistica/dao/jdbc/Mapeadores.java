@@ -7,10 +7,7 @@ import ar.edu.usal.logistica.domain.Chofer;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
- * Convierte filas de un ResultSet en objetos del dominio. El prefijo permite leer columnas
- * con alias cuando una consulta une varias tablas ("ch_nombre", "c_marca")
- */
+
 final class Mapeadores {
 
     private Mapeadores() {

@@ -1,6 +1,6 @@
 package ar.edu.usal.logistica.domain;
 
-/** Ciclo de vida de un viaje: ASIGNADO -> EN_CURSO -> FINALIZADO. */
+/* Ciclo de vida de un viaje*/
 public enum EstadoViaje {
     ASIGNADO("Asignado"),
     EN_CURSO("En curso"),

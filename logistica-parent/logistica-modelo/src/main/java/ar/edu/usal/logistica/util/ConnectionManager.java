@@ -9,10 +9,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-/**
- * Singleton: existe una sola instancia que conoce la configuración de la base
- * y entrega conexiones nuevas a quien las pida.
- */
+
 public class ConnectionManager {
 
     private static final String ARCHIVO = "db.properties";
@@ -37,7 +34,7 @@ public class ConnectionManager {
         }
     }
 
-    /** Punto de acceso global. synchronized evita que dos hilos creen dos instancias. */
+    /* Punto de acceso global. synchronized evita que dos hilos creen dos instancias. */
     public static synchronized ConnectionManager getInstance() throws DAOException {
         if (instancia == null) {
             instancia = new ConnectionManager();
@@ -45,7 +42,7 @@ public class ConnectionManager {
         return instancia;
     }
 
-    /** Devuelve una conexión nueva. Quien la pide es responsable de cerrarla. */
+    /* Devuelve una conexión nueva. Quien la pide es responsable de cerrarla */
     public Connection getConnection() throws DAOException {
         try {
             return DriverManager.getConnection(
@@ -57,7 +54,7 @@ public class ConnectionManager {
         }
     }
 
-    /** Lee cualquier valor del archivo (la Factory lo usa para leer dao.origen). */
+    /* Lee cualquier valor del archivo  */
     public String getProperty(String clave) {
         return propiedades.getProperty(clave);
     }

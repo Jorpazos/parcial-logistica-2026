@@ -9,18 +9,18 @@ import java.util.List;
 
 public interface ChoferDAO {
 
-    /** Da de alta el chofer, sus camiones autorizados y su usuario, todo en una transacción. */
+    /* Da de alta el chofer, sus camiones autorizados y su usuario */
     void insertar(Chofer chofer, String claveInicial) throws DAOException, ValidacionException;
 
-    /** Modifica el chofer y reemplaza sus camiones autorizados, en una transacción. */
+    /* Modifica el chofer y reemplaza sus camiones autorizados */
     void actualizar(Chofer chofer) throws DAOException, ValidacionException;
 
-    /** Elimina el chofer, su usuario y sus autorizaciones (falla si tiene viajes). */
+    /* Elimina el chofer, su usuario y sus autorizaciones (falla si tiene viajes) */
     void eliminar(long id) throws DAOException, ValidacionException;
 
     Chofer buscarPorId(long id) throws DAOException;
 
-    /** @throws ChoferNoEncontradoException si no existe un chofer con ese DNI */
+    /* si no existe un chofer con ese DNI */
     Chofer buscarPorDni(String dni) throws DAOException, ChoferNoEncontradoException;
 
     List<Chofer> listarTodos() throws DAOException;

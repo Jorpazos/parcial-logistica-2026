@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/** Chofer: hereda los datos de Persona y agrega categoría y camiones autorizados. */
+/* Chofer: hereda los datos de Persona y agrega categoría y camiones autorizados */
 public class Chofer extends Persona {
 
     private Categoria categoria;
@@ -34,7 +34,7 @@ public class Chofer extends Persona {
         }
     }
 
-    /** Agrega un camión a los autorizados, sin repetirlo. */
+    /* Agrega un camión a los autorizados, sin repetirlo */
     public void autorizar(Camion camion) {
         boolean yaEsta = camionesAutorizados.stream()
                 .anyMatch(c -> c.getId() != null && c.getId().equals(camion.getId()));
@@ -43,7 +43,7 @@ public class Chofer extends Persona {
         }
     }
 
-    /** Puede manejarlo si está autorizado y su categoría alcanza para las toneladas. */
+    /* Puede manejarlo si está autorizado y su categoría alcanza para las toneladas */
     public boolean puedeManejar(Camion camion) {
         boolean autorizado = camionesAutorizados.stream()
                 .anyMatch(c -> c.getId() != null && c.getId().equals(camion.getId()));

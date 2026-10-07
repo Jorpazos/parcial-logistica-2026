@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/** Pantalla del chofer: ve sus viajes y los inicia o finaliza (por PUT, con $.ajax). */
+/* Pantalla del chofer*/
 @WebServlet("/chofer/viajes")
 public class MisViajesServlet extends HttpServlet {
 
@@ -66,7 +66,7 @@ public class MisViajesServlet extends HttpServlet {
         }
     }
 
-    // Devuelve el usuario si es un chofer logueado; si no, responde y devuelve null
+    // Devuelve el usuario si es un chofer logueado
     private Usuario chofer(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         Usuario usuario = (Usuario) req.getSession().getAttribute("usuario");
         if (usuario == null) {

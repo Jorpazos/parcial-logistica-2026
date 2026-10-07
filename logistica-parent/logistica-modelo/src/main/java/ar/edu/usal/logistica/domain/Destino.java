@@ -1,6 +1,6 @@
 package ar.edu.usal.logistica.domain;
 
-/** Ciudades a las que transporta la empresa (únicas válidas como origen y destino). */
+/* Ciudades a las que transporta la empresa  */
 public enum Destino {
     CABA("CABA"),
     CORDOBA("Córdoba"),

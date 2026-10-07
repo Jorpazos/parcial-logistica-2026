@@ -5,9 +5,7 @@ import java.sql.SQLException;
 
 public final class JdbcUtil {
 
-    /** Código de MySQL: valor duplicado en una clave única. */
     public static final int ERR_DUPLICADO = 1062;
-    /** Códigos de MySQL: violación de clave foránea (con filas hijas / padre inexistente). */
     public static final int ERR_FK_PADRE = 1451;
     public static final int ERR_FK_HIJO = 1452;
 

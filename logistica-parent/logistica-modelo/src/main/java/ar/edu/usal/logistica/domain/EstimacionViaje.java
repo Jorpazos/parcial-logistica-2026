@@ -1,6 +1,6 @@
 package ar.edu.usal.logistica.domain;
 
-/** Resultado del cálculo de un viaje */
+/* Resultado del cálculo de un viaje */
 public final class EstimacionViaje {
 
     private final int distanciaKm;

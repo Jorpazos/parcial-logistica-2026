@@ -16,7 +16,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-/** Implementación JDBC de CamionDAO. */
 public class CamionDAOJdbc implements CamionDAO {
 
     private static final String INSERT =
@@ -140,7 +139,6 @@ public class CamionDAOJdbc implements CamionDAO {
         return camiones;
     }
 
-    /** Traduce el error técnico a un mensaje de negocio cuando se puede (dominio duplicado). */
     private DAOException traducir(SQLException e, Camion camion, String mensajeGenerico) throws ValidacionException {
         if (JdbcUtil.esDuplicado(e)) {
             throw new ValidacionException("Ya existe un camión con el dominio " + camion.getDominio() + ".");

@@ -22,7 +22,6 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-/** Implementación JDBC de ViajeDAO. */
 public class ViajeDAOJdbc implements ViajeDAO {
 
     // Un viaje junto con su chofer y su camión en una sola consulta (JOIN). Los alias evitan columnas repetidas.

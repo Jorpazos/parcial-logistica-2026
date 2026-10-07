@@ -10,10 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-// Se declara en web.xml (no lleva @WebServlet)
+// Se declara en web.xml
 public class LogoutServlet extends HttpServlet {
 
-    // POST: cierra la sesion porque modifica datos (un link GET no deberia poder desloguear)
+    // POST: cierra la sesion porque modifica datos
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {

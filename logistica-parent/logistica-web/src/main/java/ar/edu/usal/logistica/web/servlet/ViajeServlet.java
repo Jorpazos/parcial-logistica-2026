@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-/** Pantalla del administrador para cargar viajes. */
+/* Pantalla del administrador */
 @WebServlet("/admin/viajes")
 public class ViajeServlet extends HttpServlet {
 
@@ -33,7 +33,7 @@ public class ViajeServlet extends HttpServlet {
         if (!esAdmin(req, resp)) {
             return;
         }
-        // Si el POST anterior dejo un aviso en la Session, se pasa al request y se borra
+
         req.setAttribute("aviso", sesion.getAttribute("aviso"));
         req.setAttribute("avisoTipo", sesion.getAttribute("avisoTipo"));
         sesion.removeAttribute("aviso");

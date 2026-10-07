@@ -5,7 +5,6 @@ import ar.edu.usal.logistica.exception.ValidacionException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-/** Viaje cargado por el administrador y asignado a un chofer y un camión. */
 public class Viaje {
 
     private static final DateTimeFormatter FORMATO = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
@@ -36,14 +35,14 @@ public class Viaje {
         this.fechaFin = fechaFin;
     }
 
-    /** Crea un viaje nuevo en estado ASIGNADO, aplicando el cálculo de tiempo y tanques. */
+    /* Crea un viaje nuevo en estado ASIGNADO */
     public static Viaje nuevo(Chofer chofer, Camion camion, Destino origen, Destino destino, int distanciaKm) {
         EstimacionViaje estimacion = CalculadoraViaje.calcular(camion, distanciaKm);
         return new Viaje(null, chofer, camion, origen, destino, estimacion,
                 EstadoViaje.ASIGNADO, LocalDateTime.now(), null, null);
     }
 
-    /** Reglas que debe cumplir un viaje antes de guardarse. */
+    /* Reglas que debe cumplir un viaje antes de guardarse. */
     public void validar() throws ValidacionException {
         if (chofer == null || chofer.getId() == null) {
             throw new ValidacionException("Debe seleccionar un chofer.");

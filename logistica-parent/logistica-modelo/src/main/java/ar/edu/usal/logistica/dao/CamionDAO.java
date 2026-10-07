@@ -18,6 +18,6 @@ public interface CamionDAO {
 
     List<Camion> listarTodos() throws DAOException;
 
-    /** Camiones que el chofer puede manejar y que no están en viaje. */
+    /* Camiones que el chofer puede manejar y que no están en viaje */
     List<Camion> listarDisponiblesParaChofer(long choferId) throws DAOException;
 }

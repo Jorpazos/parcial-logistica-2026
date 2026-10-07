@@ -45,7 +45,7 @@ public class Camion {
         }
     }
 
-    /** Litros de combustible necesarios para recorrer una distancia. */
+    /* Litros de combustible necesarios para recorrer una distancia */
     public double litrosNecesarios(int distanciaKm) {
         return distanciaKm * consumoLitrosPorKm;
     }
